@@ -3,7 +3,7 @@
 }
 
 html{	
-	background-image: linear-gradient(#11998e,#38ef7d);
+	background-image: linear-gradient(#FDC830,#F37335);
 	background-size:cover;
 	height: 100%;
 }
@@ -15,6 +15,19 @@ html{
 	max-width: 800px;
 	border-radius: 8px;
 	min-height: 350px;
+}
+
+#deli_box{
+	width:80%;
+	background: #FDC830;
+	margin: 2em auto;
+	max-width: 600px;
+	border-radius: 8px;
+}
+
+#deli_info{
+	padding: 0.5em;
+	
 }
 
 #content-title span{

@@ -1,4 +1,4 @@
-# Hermes - Delivery Managment Platform
+# Hermes - Delivery Management Platform
 
 ## Description:
 

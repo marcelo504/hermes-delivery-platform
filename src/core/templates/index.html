@@ -22,6 +22,25 @@
 		</div>
 
 		<div id="deliveries">
+			{% for delivery in delivery_obj.get_deliveries() %}
+
+			<div id="deli_box">
+
+				<div id="deli_info">
+					<h3>Entrega:</h3>
+					<p>Cliente: {{ client_obj.get_client_id(delivery[1])[1]}} </p>
+					<p>Endereço: {{ client_obj.get_client_id(delivery[1])[2]}} </p>
+					<p>Telefone: {{ client_obj.get_client_id(delivery[1])[3]}} </p>
+				</div>
+				
+				<form method="get">
+					<input class="Deliver_Button" type="submit" id="Configure" name="Confirmar Entrega" value= {{ delivery[0] }} >
+				</form>
+			</div>
+
+
+
+			{% endfor %}	
 
 		</div>
 		

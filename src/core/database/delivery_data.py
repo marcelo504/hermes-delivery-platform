@@ -61,6 +61,22 @@ class delivery_data:
 
 		self.conn.commit()
 
+	def edit_delivery(self, id, field, new_value):
+		c = self.conn.cursor()
+
+		if field != 'client_id' and field != 'description' and field != 'status' and field != 'delman_id':
+			return False
+
+		c.execute("UPDATE TABLE deliveries SET "+field+"="+new_value+" WHERE id ="+id)
+		self.conn.commit()
+
+	def get_deliveries(self):
+		c = self.conn.cursor()
+
+		c.execute("SELECT * FROM deliveries")
+
+		return c.fetchall()
+
 	def view_deliveries(self):
 		c = self.conn.cursor()
 

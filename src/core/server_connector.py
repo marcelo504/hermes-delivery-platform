@@ -31,19 +31,19 @@ class server_class():
 		# Routes
 		@app.route('/', methods=['GET','POST'])
 		def hermes_index():
-			return render_template('index.html', request=request, delivery_obj=delivery_obj)
+			return render_template('index.html', request=request, delivery_obj=self.delivery_obj, client_obj=self.client_obj)
 
 		@app.route('/newclient', methods=['GET','POST'])
 		def new_client_page():
-			return render_template('newclient.html', request=request, client_obj=client_obj)
+			return render_template('newclient.html', request=request, client_obj=self.client_obj)
 
 		@app.route('/newdelivery', methods=['GET','POST'])
 		def new_delivery_page():
-			return render_template('newdelivery.html', request=request, delivery_obj=delivery_obj)
+			return render_template('newdelivery.html', request=request, delivery_obj=self.delivery_obj)
 
 		@app.route('/newdeliveryman', methods=['GET','POST'])
 		def new_deliveryman_page():
-			return render_template('newdeliveryman.html', request=request, delman_obj=delman_obj)		
+			return render_template('newdeliveryman.html', request=request, delman_obj=self.delman_obj)		
 
 
 

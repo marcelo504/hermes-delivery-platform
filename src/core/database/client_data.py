@@ -63,9 +63,17 @@ class client_data:
 		if field != 'name' and field != 'address' and field != 'phone' and field != 'common_cart':
 			return False
 
-		c.execute("UPDATE TABLE clients SET "+field+"="+new_value+" WHERE id =?",id)
-		pass
+		c.execute("UPDATE TABLE clients SET "+field+"="+new_value+" WHERE id ="+str(id))
+		self.conn.commit()
 
+	def get_client_id(self, id):
+		c = self.conn.cursor()
+
+		c.execute("SELECT * FROM clients WHERE id="+str(id))
+
+		client = c.fetchall()
+
+		return client[0]
 
 	def view_clients(self):
 		c = self.conn.cursor()
